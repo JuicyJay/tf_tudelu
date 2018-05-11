@@ -1,0 +1,9 @@
+digraph G {
+"base_footprint" -> "base_link"[label="Broadcaster: /link0\nAverage rate: 99.017 Hz\nMost recent transform: 1526030722.913 ( 0.000 sec old)\nBuffer length: 4.989 sec\n"];
+"base_link" -> "tilt_base"[label="Broadcaster: /link1\nAverage rate: 99.017 Hz\nMost recent transform: 1526030722.913 ( 0.000 sec old)\nBuffer length: 4.989 sec\n"];
+"tilt_base" -> "camera"[label="Broadcaster: /link2\nAverage rate: 99.018 Hz\nMost recent transform: 1526030722.913 ( 0.000 sec old)\nBuffer length: 4.989 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1526030722.913"[ shape=plaintext ] ;
+ }->"base_footprint";
+}

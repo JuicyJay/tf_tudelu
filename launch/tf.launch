@@ -1,0 +1,12 @@
+<launch>
+<arg name="TFtime" default="10"/>
+   <node pkg="tf" type="static_transform_publisher" name="link0" args="0 0 0 0 0 0 base_footprint base_link $(arg TFtime)"/>
+   <node pkg="tf" type="static_transform_publisher" name="link1" args="0 0 0 0 0 0 base_link tilt_base $(arg TFtime)"/>
+   <node pkg="tf" type="static_transform_publisher" name="link2" args="0 0 0 0 0 0 tilt_base camera $(arg TFtime)"/>
+
+	
+	<node pkg = "tf_dudelu" type = "tfListener_node" name = "listener_node">
+		<param name = "tf_frame_to" type = "string" value = "camera"/>
+		<param name = "tf_frame_from" type = "string" value = "base_link"/>
+	</node>
+</launch>
